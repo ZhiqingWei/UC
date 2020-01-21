@@ -1,0 +1,1 @@
+{"_id":"5e1d6d6648bf654ddc0d1597","Assembly":"Lynxmotion","Device":"Jaco","DisplayName":null,"FunctionArray":[{"Name":"Forward","Param":[0.0],"ButtonIndex":0}],"ApiType":"LocalLib","Vid":"046D","Pid":"C52F","Methods":null}

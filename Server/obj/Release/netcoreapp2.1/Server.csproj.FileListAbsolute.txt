@@ -1,0 +1,17 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\Server.deps.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\Server.runtimeconfig.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\Server.runtimeconfig.dev.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\Server.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\Server.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\UCProtocol.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\UCUtility.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\NAudio.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\UCProtocol.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\UCUtility.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\bin\Release\netcoreapp2.1\NAudio.xml
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.csprojAssemblyReference.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.AssemblyInfoInputs.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.AssemblyInfo.cs
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.csproj.CopyComplete
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\Server\obj\Release\netcoreapp2.1\Server.pdb

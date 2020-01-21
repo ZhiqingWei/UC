@@ -1,0 +1,189 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
+        "projectName": "Server",
+        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\obj\\publish\\win-x86\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
+              },
+              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.13, )",
+              "autoReferenced": true
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "System.Security.Permissions": {
+              "target": "Package",
+              "version": "(, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "projectName": "UCProtocol",
+        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
+        "projectName": "UCUtility",
+        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
+        "projectStyle": "PackagesConfig",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
+              }
+            }
+          }
+        },
+        "packagesConfigPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\packages.config"
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    }
+  }
+}

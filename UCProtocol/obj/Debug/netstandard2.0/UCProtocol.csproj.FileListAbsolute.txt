@@ -1,0 +1,8 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\UCProtocol.deps.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\UCProtocol.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\UCProtocol.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.csprojAssemblyReference.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.AssemblyInfoInputs.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.AssemblyInfo.cs
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.pdb

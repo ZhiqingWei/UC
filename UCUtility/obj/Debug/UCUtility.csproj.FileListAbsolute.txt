@@ -1,0 +1,6 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\UCUtility.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\UCUtility.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCUtility\obj\Debug\UCUtility.csprojAssemblyReference.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCUtility\obj\Debug\UCUtility.csproj.CopyComplete
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCUtility\obj\Debug\UCUtility.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCUtility\obj\Debug\UCUtility.pdb
