@@ -185,7 +185,7 @@ namespace UCUI.Models
                                     //        currentWindow.NotifyServer(currentWindow.localIP + selectedDevice + "/" + buttonIndex,
                                     //          "",
                                     //        "POST");
-                                    //        Thread.Sleep(20);
+                                    //        Thread.Sleep(20);     
                                     //    }
                                     //});
                                     selectedDevice = "AL5D";
@@ -197,12 +197,12 @@ namespace UCUI.Models
                                     selectedDevice = "Alexa";
                                     break;
                                 case "Jaco arm":
-                                    selectedDevice = "Jaco arm";
+                                    selectedDevice = "Jaco";
                                     break;
                             }
                             if (value == "ButtonNull")
                             {
-                                if (selectedDevice != "Alexa" && selectedDevice != "AL5D")
+                                if (selectedDevice != "Alexa" && selectedDevice != "AL5D" && selectedDevice != "Jaco"   )
                                 {
                                     currentWindow.NotifyServer(currentWindow.localIP + selectedDevice + "/" + buttonIndex,
                                    "", "POST");
@@ -226,6 +226,20 @@ namespace UCUI.Models
                                         while (currentWindow.buttonPressed)
                                         {
                                             currentWindow.NotifyServer(currentWindow.localIP + "AL5D" + "/" + buttonIndex,
+                                              "",
+                                            "POST");
+                                            Thread.Sleep(100);
+                                        }
+                                        Thread.Sleep(50);
+                                    });
+                                    break;
+                                case "Jaco arm":
+                                    selectedDevice = "Jaco";
+                                    Task.Run(() =>
+                                    {
+                                        while (currentWindow.buttonPressed)
+                                        {
+                                            currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex,
                                               "",
                                             "POST");
                                             Thread.Sleep(100);

@@ -107,6 +107,7 @@ namespace Lynxmotion
             // Try every single COM port on the machine
             foreach (string port_name in SerialPort.GetPortNames())
             {
+                Console.WriteLine(port_name);
                 try
                 {
                     Console.WriteLine("\tTrying to connect to " + port_name + " at " + baudRate + "bps");
@@ -240,7 +241,7 @@ namespace Lynxmotion
                     ret = true;
                 }
             }
-            catch (TimeoutException t_e)
+            catch (TimeoutException te)
             {
                 Disconnect();
                 throw new TimeoutException("Unable to find the SSC32 device, no response received...");

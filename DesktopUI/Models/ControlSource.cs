@@ -11,7 +11,6 @@ namespace UCUI.Models
     class ControlSource
     {
         private static List<ControlOption> _options;
-        private static string fileName;
         private const int CURRENT_APPS = 5;
 
 
@@ -51,30 +50,31 @@ namespace UCUI.Models
 
             }
 
-
-            foreach (ControlOption curOption in _options)
-            {
-                System.Diagnostics.Debug.WriteLine(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName);
-                if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName))
-                {
-                    curOption.actualUri = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName, UriKind.RelativeOrAbsolute);
-                }       
-                curOption.buttonUris = new Uri[curOption.buttonLabels.Length];
-                int i = 0;
-                System.Diagnostics.Debug.WriteLine("button image:"+AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[0]);
-                foreach (string curImage in curOption.buttonImages)     
-                {
-                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i]))
-                    {
-                        curOption.buttonUris[i] = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i++], UriKind.RelativeOrAbsolute);
-                    }
-                    //String path = AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i];
-                }
-            }           
+            updateUris();
+            #region CommentOutOriginalForLoop
+            //foreach (ControlOption curOption in _options)
+            //{
+            //    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName))
+            //    {
+            //        curOption.actualUri = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName, UriKind.RelativeOrAbsolute);
+            //    }       
+            //    curOption.buttonUris = new Uri[curOption.buttonLabels.Length];
+            //    int i = 0;
+            //    foreach (string curImage in curOption.buttonImages)     
+            //    {
+            //        if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i]))
+            //        {
+            //            curOption.buttonUris[i] = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i++], UriKind.RelativeOrAbsolute);
+            //        }
+            //        //String path = AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i];
+            //    }
+            //}     
+            #endregion
 
 
         }
 
+        #region NewForJaco
         public static List<ControlOption> setOptions(string Mode)
         {
             string newJacoMode = "";
@@ -82,32 +82,27 @@ namespace UCUI.Models
 
             for(int i = 0; i < CURRENT_APPS; i++)
             {
-                System.Diagnostics.Debug.WriteLine($"{i} = {Options[i]}");
+                //System.Diagnostics.Debug.WriteLine($"{i} = {Options[i]}");
                 newOptions.Add(Options[i]);
             }
                     
             switch (Mode)
             {
                 case "Arm":
-                    System.Diagnostics.Debug.WriteLine("jaco arm1");
                     newJacoMode = Directory.GetFiles("controloptions", "arm*")[0];
                     //newJacoMode = Directory.GetFiles("controloptions\\jacomodes", "arm*")[0];       
                     break;
                 case "Wrist":
-                    System.Diagnostics.Debug.WriteLine("jaco arm2");
                     newJacoMode = Directory.GetFiles("controloptions", "wrist*")[0];
                     //newJacoMode = Directory.GetFiles("controloptions\\jacomodes", "wrist*")[0];
                     break;
                 case "Finger":
-                    System.Diagnostics.Debug.WriteLine("jaco arm3");
                     newJacoMode = Directory.GetFiles("controloptions", "finger*")[0];
                     //newJacoMode = Directory.GetFiles("controloptions\\jacomodes", "finger*")[0];
                     break;
             }
 
-            System.Diagnostics.Debug.WriteLine("Before stack overflow");
             string[] lines = System.IO.File.ReadAllLines(newJacoMode);
-            System.Diagnostics.Debug.WriteLine("After        stack overflow");
             string[] boolWords = lines[0].Split(' ');
             bool[] _buttonVisible = new bool[9];
             string[] _buttonLabels = lines[5].Split(' ');
@@ -136,24 +131,24 @@ namespace UCUI.Models
         {
             foreach (ControlOption curOption in _options)
             {
-                System.Diagnostics.Debug.WriteLine(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName);
+                //System.Diagnostics.Debug.WriteLine(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName);
                 if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName))
                 {
                     curOption.actualUri = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.imageName, UriKind.RelativeOrAbsolute);
                 }
                 curOption.buttonUris = new Uri[curOption.buttonLabels.Length];
                 int i = 0;
-                System.Diagnostics.Debug.WriteLine("button image:" + AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[0]);
+                //System.Diagnostics.Debug.WriteLine("button image:" + AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[0]);
                 foreach (string curImage in curOption.buttonImages)
                 {
                     if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i]))
                     {
                         curOption.buttonUris[i] = new Uri(AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i++], UriKind.RelativeOrAbsolute);
                     }
-                    //String path = AppDomain.CurrentDomain.BaseDirectory + curOption.buttonImages[i];
                 }
             }
         }
+        #endregion
 
         public static List<ControlOption> Options
         {
@@ -164,18 +159,6 @@ namespace UCUI.Models
             set
             {
                 _options = value;
-            }
-        }
-
-        public static string FileName
-        {
-            get
-            {
-                return fileName;
-            }
-            set
-            {
-                fileName = value;
             }
         }
 

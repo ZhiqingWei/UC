@@ -9,12 +9,11 @@ using UCProtocol;
 namespace Lynxmotion
 {
     [Export(typeof(UCProtocol.IDevice))]
-    public class Jaco : SSC32, IDevice
+    public class Jaco : IDevice
     {
         public Jaco() { }
 
         public Jaco(string portName)
-            : base(portName, 9600, 6)
         {
             Initialise();
         }
@@ -25,24 +24,29 @@ namespace Lynxmotion
             return new Jaco(serialPort);
         }
 
-        public string GetSerialPort()
+        public string GetSerialPort()               
         {
-            SSC32ENumerationResult[] SSC32s = Jaco.EnumerateConnectedSSC32(9600);
-            if (SSC32s.Length > 0)
-            {
-                return SSC32s[0].PortName;
-            }
-            return "";
+            return "true";
         }
 
         public void Initialise()
         {
-            
         }
 
         public string Forward()
         {
             return "Jaco moving forward!!";
         }
+
+        public string Backward()
+        {
+            return "Jaco moving backward!!";
+        }
+
+        public string TiltUp()
+        {
+            return "Jaco tiltling up!!";
+        }
     }
 }
+    

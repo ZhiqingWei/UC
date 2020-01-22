@@ -202,9 +202,25 @@ namespace UCUI
                         Grid.SetRow(sideButtonArray[i], 4);
                     }
 
-                    sideButtonArray[0].Click += delegate { SelectionChangedJaco("Arm"); ControlOptions.SelectedIndex = 5; };    
-                    sideButtonArray[1].Click += delegate { SelectionChangedJaco("Wrist"); ControlOptions.SelectedIndex = 5; };
-                    sideButtonArray[2].Click += delegate { SelectionChangedJaco("Finger"); ControlOptions.SelectedIndex = 5; };
+                    sideButtonArray[0].PreviewMouseDown += delegate 
+                    {
+                        CheckSound();
+                        SelectionChangedJaco("Arm"); 
+                        ControlOptions.SelectedIndex = 5; 
+                    };    
+                    sideButtonArray[1].PreviewMouseDown += delegate 
+                    {
+                        CheckSound();
+                        SelectionChangedJaco("Wrist"); 
+                        ControlOptions.SelectedIndex = 5; 
+                    };
+                    sideButtonArray[2].PreviewMouseDown += delegate 
+                    {
+                        CheckSound();
+                        SelectionChangedJaco("Finger"); 
+                        ControlOptions.SelectedIndex = 5; 
+                    };
+
                 }
                
                     for (int i = 0; i < 9; i++)
@@ -353,13 +369,13 @@ namespace UCUI
             ControlSource.Options = ControlSource.setOptions(Mode);
             ControlOptions.ItemsSource = null;  
             ControlOptions.ItemsSource = ControlSource.Options; 
-            foreach (ControlOption option in ControlOptions.ItemsSource)
-            {
-                System.Diagnostics.Debug.WriteLine(option.buttonVisible[0]);
-                System.Diagnostics.Debug.WriteLine(option.name);
-                System.Diagnostics.Debug.WriteLine(option.imageName);
-                System.Diagnostics.Debug.WriteLine(option.buttonImages);
-            }
+            //foreach (ControlOption option in ControlOptions.ItemsSource)
+            //{
+            //    System.Diagnostics.Debug.WriteLine(option.buttonVisible[0]);
+            //    System.Diagnostics.Debug.WriteLine(option.name);
+            //    System.Diagnostics.Debug.WriteLine(option.imageName);
+            //    System.Diagnostics.Debug.WriteLine(option.buttonImages);
+            //}
             ControlSource.updateUris();         
 
         }
@@ -473,7 +489,8 @@ namespace UCUI
 
        public void NotifyServer(string url, string content, string method, string contentType = "application/json")
         {
-                Console.WriteLine(url); 
+            Console.WriteLine(url);
+            System.Diagnostics.Debug.WriteLine("Notify server try");
             Task.Run(() =>
             {
                 HttpRequestMessage message = new HttpRequestMessage()

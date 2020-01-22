@@ -110,10 +110,13 @@ namespace AppServer
             // Check for new devices that are not registered
             foreach (string deviceId in deviceIdSet)
             {
+                Console.WriteLine("DeviceID: " + deviceId);
                 ParseDeviceId(deviceId, out string vid, out int vidIndex, out string pid, out int pidIndex);
+                Console.WriteLine("vid: " + vid + "pid: "+pid);
                 if (vidIndex < 0 || pidIndex < 0) { } // Invalid device
                 else RegisterUSBDeviceById(deviceId, vid, pid);
             }
+
         }
 
         /// <summary>
@@ -136,9 +139,10 @@ namespace AppServer
 
         private void RegisterUSBDeviceById(string deviceId, string vid, string pid)
         {
-            try
+             try
             {
                 DeviceInfo newDeviceInfo = JsonConvert.DeserializeObject<DeviceInfo>(QueryDeviceInfo(vid, pid, true));
+                Console.WriteLine("Try to register USB device!");
                 if (newDeviceInfo != null)
                 {
                     newDeviceInfo.ToFile("newDevice.txt");
@@ -181,7 +185,7 @@ namespace AppServer
         /// <param name="deviceName">The friendly name of device</param>
         public void BindDevice(string deviceName, string assemblyName)
         {
-            Assembly dll = Assembly.LoadFile(Directory.GetCurrentDirectory() + "\\..\\plugin\\" + assemblyName + ".dll");
+            Assembly dll = Assembly.LoadFile(Directory.GetCurrentDirectory() + "\\..\\Server\\plugin\\" + assemblyName + ".dll");
             ConnectedDeviceList[deviceName].Library = dll;
             IDevice newDevice = null;
             foreach (Type type in dll.GetTypes())
@@ -216,7 +220,7 @@ namespace AppServer
             MongoClient mongo;
             if (connectionStr)
             {
-                var connectionString = String.Format("mongodb://{0}:{1}@cluster0-shard-00-00-zragv.mongodb.net:27017,cluster0-shard-00-01-zragv.mongodb.net:27017,cluster0-shard-00-02-zragv.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority", auth.User, auth.Pass);
+                var connectionString = "mongodb+srv://ucl_uc:NQR7@cluster0-zragv.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true";
                 mongo = new MongoClient(connectionString);
             }
             else
@@ -335,7 +339,7 @@ namespace AppServer
         /// <returns>A string corresponding to the status of the operation</returns>
         public string SendResponse(HttpListenerRequest request)
         {
-            Console.WriteLine(request.Url);
+            Console.WriteLine(request.Url);     
             string rawUrl = request.RawUrl.Replace("%20", " ");
             string[] parsedRequest = rawUrl.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             
@@ -343,8 +347,8 @@ namespace AppServer
             if (parsedRequest.Length == 0) return "";
             else if (request.HttpMethod == "POST")
             {
-                string deviceRequested = parsedRequest[0];
-                Console.WriteLine(deviceRequested);
+                string deviceRequested = parsedRequest[0];          
+                Console.WriteLine("Device requested: {0}", deviceRequested);
                 ControllerDevice device = IsDeviceConnected(deviceRequested);
                 if (device == null)
                 {
@@ -353,19 +357,18 @@ namespace AppServer
                 }
                 else
                 {
-                    Console.WriteLine("In else!");
                     if (device.DeviceInfo.ApiType == "LocalLib")
                     {
                         int indexRequested = Int32.Parse(parsedRequest[1]);
-                        Console.WriteLine(indexRequested);
                         IEnumerable<USBDeviceMethod> resultList =
                             from result in device.DeviceInfo.FunctionArray
                             where result.ButtonIndex == indexRequested
                             select result;
 
                         string functionRequested = resultList.First().Name;
-                        Console.WriteLine(functionRequested);
+                        Console.WriteLine("Function requested: {0}", functionRequested);
                         MethodInfo method = GetMethodInfo(device, functionRequested);
+                        //Console.WriteLine("Return type is: {0}", method.ReturnType.ToString());
                         if (method == null)
                         {
                             return "Method Not Found";
@@ -375,7 +378,7 @@ namespace AppServer
                         {
                             Task.Run(() =>
                             {
-                            bool lockTaken = false;
+                            bool lockTaken = false;     
                             try
                             {
                                 Monitor.TryEnter(device._lock, ref lockTaken);
@@ -383,10 +386,11 @@ namespace AppServer
                                 {
 
                                     string[] parameters = new string[fieldSize - 2];
-                                    Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
-                                    if (deviceRequested == "Jaco arm")
+                                        Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
+                                        
+                                    if (deviceRequested == "Jaco")
                                         {
-                                            Console.WriteLine("Jaco working");
+                                            //Console.WriteLine("Jaco working");
                                             Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
                                         }
                                     else

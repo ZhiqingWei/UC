@@ -79,6 +79,8 @@ namespace USBManager
                 var response = SendNotificationToServer(Notif.DeviceChanged, JsonConvert.SerializeObject(USBIdSet)).Result;
                 Console.WriteLine(response.Content);
             }
+
+           
         }
 
         private void Watcher_EventArrived(object sender, EventArrivedEventArgs e)
