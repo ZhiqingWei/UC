@@ -1,4 +1,9 @@
-﻿using System;
+﻿//  BuddyHub Universal Controller
+//
+//  Modified by Zhiqing Wei, 2019
+//  https://github.com/ZhiqingWei/UC
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -196,13 +201,14 @@ namespace UCUI.Models
                                 case "Text-to-Speech":
                                     selectedDevice = "Alexa";
                                     break;
-                                case "Jaco arm":
-                                    selectedDevice = "Jaco";
-                                    break;
+                            }
+                            if (selectedDevice.Contains("Jaco"))
+                            {
+                                selectedDevice = "Jaco";
                             }
                             if (value == "ButtonNull")
                             {
-                                if (selectedDevice != "Alexa" && selectedDevice != "AL5D" && selectedDevice != "Jaco"   )
+                                if (selectedDevice != "Alexa" && selectedDevice != "AL5D" && selectedDevice != "Jaco")
                                 {
                                     currentWindow.NotifyServer(currentWindow.localIP + selectedDevice + "/" + buttonIndex,
                                    "", "POST");
@@ -229,26 +235,42 @@ namespace UCUI.Models
                                               "",
                                             "POST");
                                             Thread.Sleep(100);
-                                        }
+                                        }   
                                         Thread.Sleep(50);
                                     });
                                     break;
-                                case "Jaco arm":
-                                    selectedDevice = "Jaco";
-                                    Task.Run(() =>
-                                    {
-                                        while (currentWindow.buttonPressed)
-                                        {
-                                            currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex,
-                                              "",
-                                            "POST");
-                                            Thread.Sleep(100);
-                                        }
-                                        Thread.Sleep(50);
-                                    });
-                                    break;
+                                //case "Jaco arm":
+                                //    selectedDevice = "Jaco";
+                                //    Task.Run(() =>
+                                //    {
+                                //        while (currentWindow.buttonPressed)
+                                //        {
+                                //            currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex,
+                                //              "",
+                                //            "POST");
+                                //            Thread.Sleep(100);
+                                //        }
+                                //        Thread.Sleep(50);
+                                //    });
+                                //    break;
                             }
-                            buttonKey = value;
+                            if (selectedDevice.Contains("Jaco"))
+                            {
+                                string Mode = selectedDevice.Split(' ')[1];
+                                selectedDevice = "Jaco";
+                                Task.Run(() =>
+                                {
+                                    while (currentWindow.buttonPressed)
+                                    {
+                                        currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex + "/" + Mode,
+                                          "",
+                                        "POST");
+                                        Thread.Sleep(100);
+                                    }
+                                    Thread.Sleep(50);
+                                });
+                            }
+                                                                buttonKey = value;
                             OnPropertyChanged();
                         }
                     }

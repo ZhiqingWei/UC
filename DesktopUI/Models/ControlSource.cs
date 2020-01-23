@@ -1,4 +1,9 @@
-﻿using System;
+﻿//  BuddyHub Universal Controller
+//
+//  Modified by Zhiqing Wei, 2019
+//  https://github.com/ZhiqingWei/UC
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

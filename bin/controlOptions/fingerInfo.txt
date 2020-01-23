@@ -1,7 +1,7 @@
 false false false true true true true true true
 false
-Jaco arm
+Jaco finger
 Control the movement of a Jaco robotic arm
 \\images\\arm.png
-Open_Two Close_Two Open_Three Close_Three Drinking Reset
-\\images\\left.png \\images\\right.png \\images\\medium.png \\images\\up.png \\images\\down.png \\images\\small.png
+Open_Two Close_Two Drinking Open_Three Close_Three Reset
+\\images\\left.png \\images\\right.png \\images\\drinking.png \\images\\medium.png \\images\\up.png \\images\\reset.png

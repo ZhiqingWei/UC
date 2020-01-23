@@ -2,6 +2,8 @@
 //
 //  Created by Husheng Deng, 2018
 //  https://github.com/vomyrak/BuddyHub
+//  Modified by Zhiqing Wei, 2019
+//  https://github.com/ZhiqingWei/UC
 
 //  This library is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -348,7 +350,7 @@ namespace AppServer
             else if (request.HttpMethod == "POST")
             {
                 string deviceRequested = parsedRequest[0];          
-                Console.WriteLine("Device requested: {0}", deviceRequested);
+                //Console.WriteLine("Device requested: {0}", deviceRequested);
                 ControllerDevice device = IsDeviceConnected(deviceRequested);
                 if (device == null)
                 {
@@ -366,7 +368,7 @@ namespace AppServer
                             select result;
 
                         string functionRequested = resultList.First().Name;
-                        Console.WriteLine("Function requested: {0}", functionRequested);
+                        //Console.WriteLine("Function requested: {0}", functionRequested);
                         MethodInfo method = GetMethodInfo(device, functionRequested);
                         //Console.WriteLine("Return type is: {0}", method.ReturnType.ToString());
                         if (method == null)
@@ -391,10 +393,12 @@ namespace AppServer
                                     if (deviceRequested == "Jaco")
                                         {
                                             //Console.WriteLine("Jaco working");
+                                            Array.Copy(parsedRequest, 3, parameters, 0, fieldSize - 3);
                                             Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
                                         }
                                     else
                                         {
+                                            Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
                                             method.Invoke(device.DeviceObject, parameters);
                                         }
                                     
