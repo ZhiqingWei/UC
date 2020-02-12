@@ -188,7 +188,7 @@ namespace UCUI
                     _isFifth = true;
                     if (ButtonGrid.ColumnDefinitions.Count == 5 && ButtonGrid.RowDefinitions.Count == 5)
                     {
-                        ButtonGrid.ColumnDefinitions.Add(new ColumnDefinition());
+                        //ButtonGrid.ColumnDefinitions.Add(new ColumnDefinition());             
                         ButtonGrid.RowDefinitions.Insert(1, new RowDefinition());
                     }
                     Button[] sideButtonArray = new Button[3];
@@ -488,7 +488,7 @@ namespace UCUI
                             ButtonArray[i].Name = "Button91";
                             isGeneral = true;
                             break;
-                        case "Low":
+                        case "Low": 
                             Grid.SetColumn(ButtonArray[i], 4);
                             Grid.SetRow(ButtonArray[i], 2); 
                             ButtonArray[i].Name = "Button90";

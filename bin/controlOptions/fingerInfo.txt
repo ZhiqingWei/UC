@@ -4,4 +4,4 @@ Jaco finger
 Control the movement of a Jaco robotic arm
 \\images\\arm.png
 Open_Two Close_Two Drinking Open_Three Close_Three Reset
-\\images\\left.png \\images\\right.png \\images\\drinking.png \\images\\medium.png \\images\\up.png \\images\\reset.png
+\\images\\opentwo.png \\images\\closetwo.png \\images\\drinking.png \\images\\openthree.png \\images\\closethree.png \\images\\reset.png
