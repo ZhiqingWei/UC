@@ -1,4 +1,4 @@
-﻿                                <Window x:Class="UCUI.MainWindow"
+﻿<Window x:Class="UCUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -88,7 +88,7 @@
                 <ColumnDefinition Width='1*' />
               </Grid.ColumnDefinitions>
               <Grid.RowDefinitions>
-                <RowDefinition Height='60' />
+                <RowDefinition Height='60' />       
               </Grid.RowDefinitions>
               <Button Name='SettingsButton'
                       Style='{StaticResource Shaker}'
@@ -155,14 +155,14 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
-            <ColumnDefinition />
-          </Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
           <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition />   
             <RowDefinition Height='2*' />
             <RowDefinition Height='2*' />
-            <RowDefinition Height='2*' />
-            <RowDefinition />
+                        <RowDefinition Height='2*' />
+                        <RowDefinition />
           </Grid.RowDefinitions>
 
           <Grid.Resources>

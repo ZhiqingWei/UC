@@ -239,25 +239,16 @@ namespace UCUI.Models
                                         Thread.Sleep(50);
                                     });
                                     break;
-                                //case "Jaco arm":
-                                //    selectedDevice = "Jaco";
-                                //    Task.Run(() =>
-                                //    {
-                                //        while (currentWindow.buttonPressed)
-                                //        {
-                                //            currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex,
-                                //              "",
-                                //            "POST");
-                                //            Thread.Sleep(100);
-                                //        }
-                                //        Thread.Sleep(50);
-                                //    });
-                                //    break;
                             }
                             if (selectedDevice.Contains("Jaco"))
                             {
                                 string Mode = selectedDevice.Split(' ')[1];
                                 selectedDevice = "Jaco";
+                                if (buttonIndex.ToString().StartsWith("9"))     
+                                {
+                                    Int32.TryParse(value.Substring(7), out buttonIndex);
+                                    buttonIndex += 10;
+                                }
                                 Task.Run(() =>
                                 {
                                     while (currentWindow.buttonPressed)

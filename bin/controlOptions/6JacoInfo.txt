@@ -1,7 +1,7 @@
-true true false true true false true true false
+true true true true true true true true true
 false
 Jaco arm
 Control the movement of a Jaco robotic arm
 \\images\\arm.png
-Forward Back Left Right Up Down
-\\images\\forward.png \\images\\backwards.png \\images\\left.png \\images\\right.png \\images\\up.png \\images\\down.png
+Forward Backward Low Left Right Medium Up Down High
+\\images\\forward.png \\images\\backwards.png \\images\\small.png \\images\\left.png \\images\\right.png \\images\\medium.png \\images\\up.png \\images\\down.png \\images\\large.png

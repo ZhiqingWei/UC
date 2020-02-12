@@ -181,18 +181,26 @@ namespace UCUI
                 ControlOption myOption = (ControlOption)ControlOptions.SelectedItem;
                 int visibleButtonCounter = 0;          //Used to iterate through label array from ControlOption
 
+                #region ifJacoSelected
+                bool _isFifth = false;
                 if (ControlOptions.SelectedIndex == 5)
                 {
+                    _isFifth = true;
+                    if (ButtonGrid.ColumnDefinitions.Count == 5 && ButtonGrid.RowDefinitions.Count == 5)
+                    {
+                        ButtonGrid.ColumnDefinitions.Add(new ColumnDefinition());
+                        ButtonGrid.RowDefinitions.Insert(1, new RowDefinition());
+                    }
                     Button[] sideButtonArray = new Button[3];
                     string[] sideButtonLabel = { "Arm", "Wrist", "Finger" };
 
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 3; i++) 
                     {
                         sideButtonArray[i] = new Button();
                         sideButtonArray[i].Style = (Style)Application.Current.Resources["Pusher"];
                         sideButtonArray[i].Name = "Button" + (i + 10).ToString();
                         sideButtonArray[i].Margin = new Thickness(5, 0, 0, 0);
-
+                            
                         StackPanel ButtonContent = new StackPanel();
                         ButtonContent.HorizontalAlignment = HorizontalAlignment.Right;
                         ButtonContent.Orientation = Orientation.Vertical;
@@ -203,8 +211,8 @@ namespace UCUI
 
                         sideButtonArray[i].Content = ButtonContent;
                         ButtonGrid.Children.Add(sideButtonArray[i]);
-                        Grid.SetColumn(sideButtonArray[i], i + 2);
-                        Grid.SetRow(sideButtonArray[i], 4);
+                        Grid.SetColumn(sideButtonArray[i], i);
+                        Grid.SetRow(sideButtonArray[i], 1); 
                     }
 
                     sideButtonArray[0].PreviewMouseDown += delegate 
@@ -227,8 +235,17 @@ namespace UCUI
                     };
 
                 }
-               
-                    for (int i = 0; i < 9; i++)
+                else
+                {
+                    if (ButtonGrid.ColumnDefinitions.Count == 6 && ButtonGrid.RowDefinitions.Count == 6)
+                    {
+                        ButtonGrid.ColumnDefinitions.RemoveAt(5);
+                        ButtonGrid.RowDefinitions.RemoveAt(1);  
+                    }
+                }
+                #endregion
+
+                for (int i = 0; i < 9; i++)
                     {
                         ButtonArray[i] = new Button();
 
@@ -239,7 +256,7 @@ namespace UCUI
 
                             ButtonArray[i].Margin = new Thickness(10, 10, 10, 10);
 
-                            StackPanel ButtonContent = new StackPanel();
+                            StackPanel ButtonContent = new StackPanel();    
                             ButtonContent.HorizontalAlignment = HorizontalAlignment.Center;
                             ButtonContent.Orientation = Orientation.Vertical;
                             if (myOption.buttonUris[visibleButtonCounter] != null)  
@@ -248,7 +265,7 @@ namespace UCUI
                                 ContentImage.Source = new BitmapImage(myOption.buttonUris[visibleButtonCounter]);
                                 ContentImage.HorizontalAlignment = HorizontalAlignment.Center;
                                 ContentImage.MaxWidth = 50;
-                                ButtonContent.Children.Add(ContentImage);
+                                ButtonContent.Children.Add(ContentImage);   
                             }
                             TextBlock ContentText = new TextBlock();
                             ContentText.Text = myOption.buttonLabels[visibleButtonCounter];
@@ -256,9 +273,16 @@ namespace UCUI
                             ButtonContent.Children.Add(ContentText);
 
                             ButtonArray[i].Content = ButtonContent;
+                        if (_isFifth)
+                        {
+                            JacoButtonArrangement(myOption);    
+                        }
+                        else
+                        {
                             Grid.SetColumn(ButtonArray[i], i % 3 + 1);
                             Grid.SetRow(ButtonArray[i], i / 3 + 1);
                             ButtonGrid.Children.Add(ButtonArray[i]);
+                        }
 
 
 
@@ -383,6 +407,143 @@ namespace UCUI
             //}
             ControlSource.updateUris();         
 
+        }
+
+        private void JacoButtonArrangement(ControlOption myOption)
+        {
+            int visibleButtonCounter = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                bool isGeneral = false;
+                ButtonArray[i] = new Button();
+
+                if (myOption.buttonVisible[i])
+                {
+                    ButtonArray[i].Style = (Style)Application.Current.Resources["Pusher"];
+                    ButtonArray[i].Name = "Button" + i.ToString();
+
+                    ButtonArray[i].Margin = new Thickness(10, 10, 10, 10);
+
+                    StackPanel ButtonContent = new StackPanel();
+                    ButtonContent.HorizontalAlignment = HorizontalAlignment.Center;
+                    ButtonContent.Orientation = Orientation.Vertical;
+                    if (myOption.buttonUris[visibleButtonCounter] != null)
+                    {
+                        Image ContentImage = new Image();
+                        ContentImage.Source = new BitmapImage(myOption.buttonUris[visibleButtonCounter]);
+                        ContentImage.HorizontalAlignment = HorizontalAlignment.Center;
+                        ContentImage.MaxWidth = 50;
+                        ButtonContent.Children.Add(ContentImage);
+                    }
+                    TextBlock ContentText = new TextBlock();
+                    ContentText.Text = myOption.buttonLabels[visibleButtonCounter];
+                    ContentText.HorizontalAlignment = HorizontalAlignment.Center;
+                    ButtonContent.Children.Add(ContentText);
+
+                    ButtonArray[i].Content = ButtonContent;
+
+                    string ButtonText = myOption.buttonLabels[visibleButtonCounter];
+                    System.Diagnostics.Debug.WriteLine(ButtonText);
+                    switch (ButtonText) 
+                    {
+                        case "Up":
+                            Grid.SetColumn(ButtonArray[i], 1);
+                            Grid.SetRow(ButtonArray[i], 2);
+                            isGeneral = true;
+                            break;  
+                        case "Down":
+                            Grid.SetColumn(ButtonArray[i], 1);
+                            Grid.SetRow(ButtonArray[i], 4);
+                            isGeneral = true;
+                            break;
+                        case "Left":
+                            Grid.SetColumn(ButtonArray[i], 0);
+                            Grid.SetRow(ButtonArray[i], 3);
+                            isGeneral = true;
+                            break;
+                        case "Right":
+                            Grid.SetColumn(ButtonArray[i], 3);
+                            Grid.SetRow(ButtonArray[i], 3);
+                            isGeneral = true;
+                            break;
+                        case "Forward":
+                            Grid.SetColumn(ButtonArray[i], 2);
+                            Grid.SetRow(ButtonArray[i], 2);
+                            isGeneral = true;
+                            break;
+                        case "Backward":
+                            Grid.SetColumn(ButtonArray[i], 2);
+                            Grid.SetRow(ButtonArray[i], 4);
+                            isGeneral = true;
+                            break;
+                        case "High":
+                            Grid.SetColumn(ButtonArray[i], 4);
+                            Grid.SetRow(ButtonArray[i], 4);
+                            ButtonArray[i].Name = "Button92";
+                            isGeneral = true;
+                            break;
+                        case "Medium":
+                            Grid.SetColumn(ButtonArray[i], 4);
+                            Grid.SetRow(ButtonArray[i], 3);
+                            ButtonArray[i].Name = "Button91";
+                            isGeneral = true;
+                            break;
+                        case "Low":
+                            Grid.SetColumn(ButtonArray[i], 4);
+                            Grid.SetRow(ButtonArray[i], 2); 
+                            ButtonArray[i].Name = "Button90";
+                            isGeneral = true;
+                            break;
+                    }
+                    if (!isGeneral)
+                    {
+                        Grid.SetColumn(ButtonArray[i], i % 3 + 1);
+                        Grid.SetRow(ButtonArray[i], i / 3 + 2);
+                    }
+                    
+                    ButtonGrid.Children.Add(ButtonArray[i]);        
+
+
+
+                    ButtonArray[i].PreviewMouseDown += delegate (object a, MouseButtonEventArgs b)
+                    {
+                        buttonPressed = true;
+                        CheckSound();
+                        ((UCSettings)DataContext).ButtonKey = ((Button)a).Name;
+
+                    };
+
+                    ButtonArray[i].PreviewMouseUp += delegate (object a, MouseButtonEventArgs b)
+                    {
+                        buttonPressed = false;
+                        ((UCSettings)DataContext).ButtonKey = "ButtonNull";
+                    };
+
+
+                    ButtonArray[i].MouseEnter += delegate (object a, MouseEventArgs b)
+                    {
+                        if (((UCSettings)DataContext).IsHover)
+                        {
+                            CheckSound();
+                            buttonPressed = true;
+                            CheckCenterMouse();
+                            ((UCSettings)DataContext).ButtonKey = ((Button)a).Name;
+                        }
+                    };
+
+                    ButtonArray[i].MouseLeave += delegate (object a, MouseEventArgs b)
+                    {
+                        if (((UCSettings)DataContext).IsHover)
+                        {
+                            buttonPressed = false;
+                            ((UCSettings)DataContext).ButtonKey = "ButtonNull";
+                        }
+                    };
+
+                    visibleButtonCounter++;
+                    
+                }
+            }
         }
 
         #region Detecting keystrokes for keybinds and animating it

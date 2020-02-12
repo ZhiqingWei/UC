@@ -179,7 +179,7 @@ namespace AppServer
         {
             ConnectedDeviceList.Remove(name);
         }
-
+    
 
         /// <summary>
         /// Link device library and instantiate device object
