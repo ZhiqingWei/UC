@@ -22,6 +22,9 @@ namespace UCUI.Models
         //KeyBinds stored in string instead of Key so it can be more easily read from text file (No backwards conversion needed). Alternatively it could be read binary mode.
         static private string[] keyBinds = new string[10];
         private string selectedDevice = "";
+        string speed;
+        Boolean check_click = false;
+        
         // AutoResetEvent
         static public void SetKey(string keyIn, int i)
         {
@@ -240,20 +243,67 @@ namespace UCUI.Models
                                     });
                                     break;
                             }
+
+                            
                             if (selectedDevice.Contains("Jaco"))
                             {
                                 string Mode = selectedDevice.Split(' ')[1];
+                               
+
+
+
+
+
                                 selectedDevice = "Jaco";
                                 if (buttonIndex.ToString().StartsWith("9"))     
                                 {
                                     Int32.TryParse(value.Substring(7), out buttonIndex);
                                     buttonIndex += 10;
                                 }
+
+                                
                                 Task.Run(() =>
+
+
                                 {
+
+                                    
+
                                     while (currentWindow.buttonPressed)
                                     {
-                                        currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex + "/" + Mode,
+                                        if (buttonIndex==10)
+                                        {
+                                            this.speed = "low";
+                                            
+                                            
+                                        }
+                                        else if (buttonIndex == 11)
+                                        {
+                                            this.speed = "medium";
+                                            
+
+
+                                        }
+                                        else if (buttonIndex == 12)
+                                        {
+                                            this.speed = "high";
+                                            
+
+
+                                        }
+                                        else if (this.speed == null)
+                                        {
+                                            this.speed = "medium";
+
+                                        }
+                                        
+
+                                        
+                                        
+                                        
+                                        
+
+                                        currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex + "/" + Mode + "/"+ this.speed,
                                           "",
                                         "POST");
                                         Thread.Sleep(100);
