@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UCProtocol;
 
-namespace Lynxmotion
+namespace Lynxmotion    
 {
     [Export(typeof(UCProtocol.IDevice))]
     public class Jaco : IDevice
@@ -41,12 +41,12 @@ namespace Lynxmotion
         {
         }
 
-        public string Forward(string Mode)
+        public string Forward(string Mode, string Speed)
         {
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving forward!! (Arm mode)";
+                    return "Jaco moving forward in "+Speed+" speed!! (Arm mode)";
                 case "wrist":
                     return "Jaco moving forward!! (Wrist mode)";
                 default:
@@ -55,7 +55,7 @@ namespace Lynxmotion
  
         }
 
-        public string Backward(string Mode)
+        public string Backward(string Mode, string Speed)
         {
             switch (Mode)
             {
@@ -68,7 +68,7 @@ namespace Lynxmotion
             }
         }
 
-        public string TiltUp(string Mode)
+        public string TiltUp(string Mode, string Speed)
         {
             switch (Mode)
             {
@@ -83,7 +83,7 @@ namespace Lynxmotion
             }
         }
 
-        public string TiltDown(string Mode)
+        public string TiltDown(string Mode, string Speed)
         {
             switch (Mode)
             {
@@ -98,7 +98,7 @@ namespace Lynxmotion
             }
         }
 
-        public string TurnLeft(string Mode)
+        public string TurnLeft(string Mode, string Speed)
         {
             switch (Mode)
             {
@@ -113,7 +113,7 @@ namespace Lynxmotion
             }
         }
                     
-        public string TurnRight(string Mode)
+        public string TurnRight(string Mode, string Speed)
         {
             switch (Mode)
             {

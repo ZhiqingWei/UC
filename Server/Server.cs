@@ -388,12 +388,12 @@ namespace AppServer
                                 {
 
                                     string[] parameters = new string[fieldSize - 2];
-                                        Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
+                                    Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
                                         
                                     if (deviceRequested == "Jaco")
                                         {
                                             //Console.WriteLine("Jaco working");
-                                            Array.Copy(parsedRequest, 3, parameters, 0, fieldSize - 3);
+                                            Console.WriteLine(parameters.Length);
                                             Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
                                         }
                                     else

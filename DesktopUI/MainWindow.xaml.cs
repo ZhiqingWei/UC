@@ -198,15 +198,21 @@ namespace UCUI
                     {
                         sideButtonArray[i] = new Button();
                         sideButtonArray[i].Style = (Style)Application.Current.Resources["Pusher"];
-                        sideButtonArray[i].Name = "Button" + (i + 10).ToString();
+                        sideButtonArray[i].Name = "Button" + (i + 10).ToString();       
                         sideButtonArray[i].Margin = new Thickness(5, 0, 0, 0);
-                            
+                        //sideButtonArray[i].Opacity = new double();
+                        //sideButtonArray[i].Opacity = 0.5;
+                                
                         StackPanel ButtonContent = new StackPanel();
                         ButtonContent.HorizontalAlignment = HorizontalAlignment.Right;
                         ButtonContent.Orientation = Orientation.Vertical;
+                        //ButtonContent.Opacity = new double();
+                        //ButtonContent.Opacity = 1;
 
                         TextBlock ContentText = new TextBlock();
                         ContentText.Text = sideButtonLabel[i];
+                        //ContentText.Opacity = new double();
+                        //ContentText.Opacity = 1;        
                         ButtonContent.Children.Add(ContentText);
 
                         sideButtonArray[i].Content = ButtonContent;
@@ -245,7 +251,13 @@ namespace UCUI
                 }
                 #endregion
 
-                for (int i = 0; i < 9; i++)
+                if (_isFifth)
+                {
+                    JacoButtonArrangement(myOption);
+                }
+                else
+                {
+                    for (int i = 0; i < 9; i++)
                     {
                         ButtonArray[i] = new Button();
 
@@ -256,16 +268,16 @@ namespace UCUI
 
                             ButtonArray[i].Margin = new Thickness(10, 10, 10, 10);
 
-                            StackPanel ButtonContent = new StackPanel();    
+                            StackPanel ButtonContent = new StackPanel();
                             ButtonContent.HorizontalAlignment = HorizontalAlignment.Center;
                             ButtonContent.Orientation = Orientation.Vertical;
-                            if (myOption.buttonUris[visibleButtonCounter] != null)  
+                            if (myOption.buttonUris[visibleButtonCounter] != null)
                             {
                                 Image ContentImage = new Image();
                                 ContentImage.Source = new BitmapImage(myOption.buttonUris[visibleButtonCounter]);
                                 ContentImage.HorizontalAlignment = HorizontalAlignment.Center;
                                 ContentImage.MaxWidth = 50;
-                                ButtonContent.Children.Add(ContentImage);   
+                                ButtonContent.Children.Add(ContentImage);
                             }
                             TextBlock ContentText = new TextBlock();
                             ContentText.Text = myOption.buttonLabels[visibleButtonCounter];
@@ -273,16 +285,11 @@ namespace UCUI
                             ButtonContent.Children.Add(ContentText);
 
                             ButtonArray[i].Content = ButtonContent;
-                        if (_isFifth)
-                        {
-                            JacoButtonArrangement(myOption);    
-                        }
-                        else
-                        {
+
                             Grid.SetColumn(ButtonArray[i], i % 3 + 1);
                             Grid.SetRow(ButtonArray[i], i / 3 + 1);
                             ButtonGrid.Children.Add(ButtonArray[i]);
-                        }
+
 
 
 
@@ -324,6 +331,8 @@ namespace UCUI
                             visibleButtonCounter++;
                         }
                     }
+                }
+                
 
                     if (myOption.textBoxVisible)
                     {
@@ -415,15 +424,18 @@ namespace UCUI
             for (int i = 0; i < 9; i++)
             {
                 bool isGeneral = false;
-                ButtonArray[i] = new Button();
-
+                        
                 if (myOption.buttonVisible[i])
                 {
+                    ButtonArray[i] = new Button();
                     ButtonArray[i].Style = (Style)Application.Current.Resources["Pusher"];
                     ButtonArray[i].Name = "Button" + i.ToString();
 
                     ButtonArray[i].Margin = new Thickness(10, 10, 10, 10);
 
+                    //ButtonArray[i].Opacity = new double();
+                    //ButtonArray[i].Opacity = 0.5;
+                                
                     StackPanel ButtonContent = new StackPanel();
                     ButtonContent.HorizontalAlignment = HorizontalAlignment.Center;
                     ButtonContent.Orientation = Orientation.Vertical;

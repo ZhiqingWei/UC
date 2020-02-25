@@ -248,60 +248,35 @@ namespace UCUI.Models
                             if (selectedDevice.Contains("Jaco"))
                             {
                                 string Mode = selectedDevice.Split(' ')[1];
-                               
-
-
-
-
-
                                 selectedDevice = "Jaco";
+
                                 if (buttonIndex.ToString().StartsWith("9"))     
                                 {
                                     Int32.TryParse(value.Substring(7), out buttonIndex);
                                     buttonIndex += 10;
-                                }
+                                }       
 
-                                
                                 Task.Run(() =>
-
-
                                 {
-
-                                    
-
                                     while (currentWindow.buttonPressed)
                                     {
+                                        
                                         if (buttonIndex==10)
                                         {
-                                            this.speed = "low";
-                                            
-                                            
+                                            this.speed = "low";    
                                         }
                                         else if (buttonIndex == 11)
                                         {
                                             this.speed = "medium";
-                                            
-
-
                                         }
                                         else if (buttonIndex == 12)
                                         {
                                             this.speed = "high";
-                                            
-
-
                                         }
                                         else if (this.speed == null)
                                         {
                                             this.speed = "medium";
-
                                         }
-                                        
-
-                                        
-                                        
-                                        
-                                        
 
                                         currentWindow.NotifyServer(currentWindow.localIP + "Jaco" + "/" + buttonIndex + "/" + Mode + "/"+ this.speed,
                                           "",
@@ -311,7 +286,7 @@ namespace UCUI.Models
                                     Thread.Sleep(50);
                                 });
                             }
-                                                                buttonKey = value;
+                            buttonKey = value;
                             OnPropertyChanged();
                         }
                     }
