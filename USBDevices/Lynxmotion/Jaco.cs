@@ -46,13 +46,13 @@ namespace Lynxmotion
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving forward in "+Speed+" speed!! (Arm mode)";
+                    return "Jaco moving forward  at " + Speed + " speed !!(Arm mode)";
                 case "wrist":
-                    return "Jaco moving forward!! (Wrist mode)";
+                    return "Jaco moving forward at " + Speed + " speed !!(Wrist mode)";
                 default:
-                    return "Jaco moving forward!!";
+                    return "Jaco moving forward at " + Speed + " speed !!";
             }
- 
+
         }
 
         public string Backward(string Mode, string Speed)
@@ -60,11 +60,11 @@ namespace Lynxmotion
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving backward!! (Arm mode)";
+                    return "Jaco moving backward at " + Speed + " speed !! (Arm mode)";
                 case "wrist":
-                    return "Jaco moving backward!! (Wrist mode)";
+                    return "Jaco moving backward at " + Speed + " speed !! (Wrist mode)";
                 default:
-                    return "Jaco moving backward!!";
+                    return "Jaco moving backward at " + Speed + " speed!!";
             }
         }
 
@@ -73,13 +73,13 @@ namespace Lynxmotion
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving UP!! (Arm mode)";
+                    return "Jaco moving UP at " + Speed + " speed!!";
                 case "wrist":
-                    return "Jaco moving UP!! (Wrist mode)";
+                    return "Jaco moving UP!! at  " + Speed + " speed!!  (Wrist mode)";
                 case "finger":
                     return "Jaco opening three fingers! (Finger mode)";
                 default:
-                    return "Jaco moving UP!!";
+                    return "Jaco moving UP at " + Speed + "speed!! ";
             }
         }
 
@@ -88,13 +88,13 @@ namespace Lynxmotion
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving DOWN!! (Arm mode)";
+                    return "Jaco moving DOWN at" + Speed + " speed!!";
                 case "wrist":
-                    return "Jaco moving DOWN!! (Wrist mode)";
+                    return "Jaco moving DOWN at " + Speed + " speed!! (Wrist mode)";
                 case "finger":
                     return "Jaco closing three fingers! (Finger mode)";
                 default:
-                    return "Jaco moving DOWN!!";
+                    return "Jaco moving DOWN!! at  " + Speed + " speed!!";
             }
         }
 
@@ -103,35 +103,35 @@ namespace Lynxmotion
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning left!! (Arm mode)";
+                    return "Jaco turning left at " + Speed + " speed!!";
                 case "wrist":
-                    return "Jaco turning left!! (Wrist mode)";
+                    return "Jaco turning left at " + Speed + " speed!! (Wrist mode)";
                 case "finger":
-                    return "Jaco opening two fingers! (Finger mode)";
+                    return "Jaco opening two fingers!! (Finger mode)";
                 default:
                     return "Jaco turning left!!";
             }
         }
-                    
+
         public string TurnRight(string Mode, string Speed)
         {
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning right!! (Arm mode)";
+                    return "Jaco turning right at " + Speed + " speed!!";
                 case "wrist":
-                    return "Jaco turning right!! (Wrist mode)";
+                    return "Jaco turning right at " + Speed + " speed!! (Wrist mode)";
                 case "finger":
-                    return "Jaco closing two fingers! (Finger mode)";
+                    return "Jaco closing two fingers    !!(Finger mode)";
                 default:
-                    return "Jaco turning right!!";
+                    return "Jaco turning right at " + Speed + " speed ";
             }
         }
 
-        public string DrinkingMode(string Mode)
+        public string DrinkingMode(string Mode, string Pre)
         {
             if (_isDrinking)
-            {       
+            {
                 _isDrinking = false;
                 return "Exit drinking mode";
             }
@@ -142,7 +142,7 @@ namespace Lynxmotion
             }
         }
 
-        public string Reset(string Mode)
+        public string Reset(string Mode, string Pre)
         {
             return "Jaco returning to HOME position.";
         }

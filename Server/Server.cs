@@ -350,7 +350,6 @@ namespace AppServer
             else if (request.HttpMethod == "POST")
             {
                 string deviceRequested = parsedRequest[0];          
-                //Console.WriteLine("Device requested: {0}", deviceRequested);
                 ControllerDevice device = IsDeviceConnected(deviceRequested);
                 if (device == null)
                 {
@@ -368,9 +367,7 @@ namespace AppServer
                             select result;
 
                         string functionRequested = resultList.First().Name;
-                        //Console.WriteLine("Function requested: {0}", functionRequested);
-                        MethodInfo method = GetMethodInfo(device, functionRequested);
-                        //Console.WriteLine("Return type is: {0}", method.ReturnType.ToString());
+                        MethodInfo method = GetMethodInfo(device, functionRequested);   
                         if (method == null)
                         {
                             return "Method Not Found";
@@ -392,9 +389,8 @@ namespace AppServer
                                         
                                     if (deviceRequested == "Jaco")
                                         {
-                                            //Console.WriteLine("Jaco working");
-                                            Console.WriteLine(parameters.Length);
-                                            Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
+                                           
+                                           Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
                                         }
                                     else
                                         {

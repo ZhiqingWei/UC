@@ -434,7 +434,7 @@ namespace UCUI
                     ButtonArray[i].Margin = new Thickness(10, 10, 10, 10);
 
                     //ButtonArray[i].Opacity = new double();
-                    //ButtonArray[i].Opacity = 0.5;
+                    //ButtonArray[i].Opacity = 0.5; 
                                 
                     StackPanel ButtonContent = new StackPanel();
                     ButtonContent.HorizontalAlignment = HorizontalAlignment.Center;

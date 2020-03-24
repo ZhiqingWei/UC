@@ -65,13 +65,13 @@ namespace UCProtocol
                             try
                             {
                                 string rstr = _respondMethod(ctx.Request);
-								ctx.Response.AppendHeader("Access-Control-Allow-Origin", "http://wsurop18-universal-controller.herokuapp.com");
-                                
+                                ctx.Response.AppendHeader("Access-Control-Allow-Origin", "http://wsurop18-universal-controller.herokuapp.com");
+
                                 byte[] buf = Encoding.UTF8.GetBytes(rstr);
                                 ctx.Response.ContentLength64 = buf.Length;
                                 ctx.Response.OutputStream.Write(buf, 0, buf.Length);
                             }
-                            catch (Exception e){ Console.WriteLine(e); }
+                            catch (Exception e) { }//Console.WriteLine(e); }
                             finally
                             {
                                 ctx.Response.OutputStream.Close();
