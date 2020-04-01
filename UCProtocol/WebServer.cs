@@ -71,7 +71,9 @@ namespace UCProtocol
                                 ctx.Response.ContentLength64 = buf.Length;
                                 ctx.Response.OutputStream.Write(buf, 0, buf.Length);
                             }
+#pragma warning disable CS0168 // The variable 'e' is declared but never used
                             catch (Exception e) { }//Console.WriteLine(e); }
+#pragma warning restore CS0168 // The variable 'e' is declared but never used
                             finally
                             {
                                 ctx.Response.OutputStream.Close();

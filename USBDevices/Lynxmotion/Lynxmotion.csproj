@@ -49,6 +49,9 @@
     <Reference Include="System.IO.Ports, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.IO.Ports.4.5.0\lib\net461\System.IO.Ports.dll</HintPath>
     </Reference>
+    <Reference Include="JacoDriver">
+      <HintPath>..\..\bin\Server\plugin\JacoDriver.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AL5D.cs" />
@@ -69,6 +72,11 @@
       <Name>UCProtocol</Name>
     </ProjectReference>
   </ItemGroup>
+  <!--<ItemGroup>
+    <ProjectReference Include="..\..\JacoDriver\JacoDriver.csproj">
+      <Name>JacoDriver</Name>
+    </ProjectReference>
+  </ItemGroup>-->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

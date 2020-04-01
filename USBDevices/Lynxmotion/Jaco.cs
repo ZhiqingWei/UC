@@ -1,7 +1,7 @@
 ﻿//  BuddyHub Universal Controller
 //
 //  Created by Zhiqing Wei, 2019
-//  https://github.com/ZhiqingWei/UC
+//  https://github.com/ZhiqingWei/UC    
 
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UCProtocol;
+using JacoDriver;
 
 namespace Lynxmotion    
 {
@@ -32,23 +33,28 @@ namespace Lynxmotion
             return new Jaco(serialPort);
         }
 
-        public string GetSerialPort()               
+        public string GetSerialPort()       
         {
             return "true";
         }
 
         public void Initialise()
         {
+            ////Initialse the driver to control Jaco
+            //Driver.InitialseControl();
         }
 
         public string Forward(string Mode, string Speed)
         {
+            
+            //int result = Driver.Forward(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving forward  at " + Speed + " speed !!(Arm mode)";
+                    return "Jaco moving forward at " + Speed + " speed !! (Arm mode)";
                 case "wrist":
-                    return "Jaco moving forward at " + Speed + " speed !!(Wrist mode)";
+                    return "Jaco moving forward at " + Speed + " speed !! (Wrist mode)";
                 default:
                     return "Jaco moving forward at " + Speed + " speed !!";
             }
@@ -57,42 +63,50 @@ namespace Lynxmotion
 
         public string Backward(string Mode, string Speed)
         {
+            
+            //int result = Driver.Backward(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
+                    
                     return "Jaco moving backward at " + Speed + " speed !! (Arm mode)";
                 case "wrist":
                     return "Jaco moving backward at " + Speed + " speed !! (Wrist mode)";
                 default:
-                    return "Jaco moving backward at " + Speed + " speed!!";
+                    return "Jaco moving backward at " + Speed + " speed !!";
             }
         }
 
         public string TiltUp(string Mode, string Speed)
         {
+            //int result = Driver.TiltUp(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving UP at " + Speed + " speed!!";
+                    return "Jaco moving UP at " + Speed + " speed!! (Arm mode)";
                 case "wrist":
                     return "Jaco moving UP!! at  " + Speed + " speed!!  (Wrist mode)";
                 case "finger":
-                    return "Jaco opening three fingers! (Finger mode)";
+                    return "Jaco opening three fingers !! (Finger mode)";
                 default:
-                    return "Jaco moving UP at " + Speed + "speed!! ";
+                    return "Jaco moving UP at " + Speed + "speed !! ";
             }
         }
 
         public string TiltDown(string Mode, string Speed)
         {
+            //int result = Driver.TiltDown(Mode, Speed);
+            
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving DOWN at" + Speed + " speed!!";
+                    return "Jaco moving DOWN at" + Speed + " speed !! (Arm mode)";
                 case "wrist":
-                    return "Jaco moving DOWN at " + Speed + " speed!! (Wrist mode)";
+                    return "Jaco moving DOWN at " + Speed + " speed !! (Wrist mode)";
                 case "finger":
-                    return "Jaco closing three fingers! (Finger mode)";
+                    return "Jaco closing three fingers !! (Finger mode)";
                 default:
                     return "Jaco moving DOWN!! at  " + Speed + " speed!!";
             }
@@ -100,14 +114,16 @@ namespace Lynxmotion
 
         public string TurnLeft(string Mode, string Speed)
         {
+            //int result = Driver.TurnLeft(Mode, Speed);
+            
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning left at " + Speed + " speed!!";
+                    return "Jaco turning left at " + Speed + " speed !! (Arm mode)";
                 case "wrist":
-                    return "Jaco turning left at " + Speed + " speed!! (Wrist mode)";
+                    return "Jaco turning left at " + Speed + " speed !! (Wrist mode)";
                 case "finger":
-                    return "Jaco opening two fingers!! (Finger mode)";
+                    return "Jaco opening two fingers !! (Finger mode)";
                 default:
                     return "Jaco turning left!!";
             }
@@ -115,14 +131,16 @@ namespace Lynxmotion
 
         public string TurnRight(string Mode, string Speed)
         {
+            //int result = Driver.TurnRight(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning right at " + Speed + " speed!!";
+                    return "Jaco turning right at " + Speed + " speed !! (Arm mode)";
                 case "wrist":
-                    return "Jaco turning right at " + Speed + " speed!! (Wrist mode)";
+                    return "Jaco turning right at " + Speed + " speed !! (Wrist mode)";
                 case "finger":
-                    return "Jaco closing two fingers    !!(Finger mode)";
+                    return "Jaco closing two fingers !! (Finger mode)";
                 default:
                     return "Jaco turning right at " + Speed + " speed ";
             }
@@ -130,6 +148,8 @@ namespace Lynxmotion
 
         public string DrinkingMode(string Mode, string Pre)
         {
+            //int result = Driver.ToggleDrinkingMode();
+
             if (_isDrinking)
             {
                 _isDrinking = false;
@@ -144,6 +164,7 @@ namespace Lynxmotion
 
         public string Reset(string Mode, string Pre)
         {
+            //int result = Driver.ResetHOME();
             return "Jaco returning to HOME position.";
         }
     }

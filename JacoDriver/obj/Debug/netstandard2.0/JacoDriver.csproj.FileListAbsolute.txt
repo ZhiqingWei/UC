@@ -1,0 +1,11 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\JacoDriver.deps.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\JacoDriver.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\JacoDriver.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\JacoDriver.AssemblyInfoInputs.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\JacoDriver.AssemblyInfo.cs
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\JacoDriver.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\JacoDriver.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\JacoDriver.deps.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\JacoDriver.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\JacoDriver.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\JacoDriver.csprojAssemblyReference.cache

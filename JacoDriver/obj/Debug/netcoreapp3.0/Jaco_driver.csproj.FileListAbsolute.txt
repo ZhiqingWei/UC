@@ -1,0 +1,8 @@
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\bin\Debug\netcoreapp3.0\Jaco_driver.deps.json
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\bin\Debug\netcoreapp3.0\Jaco_driver.dll
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\bin\Debug\netcoreapp3.0\Jaco_driver.pdb
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netcoreapp3.0\Jaco_driver.csprojAssemblyReference.cache
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netcoreapp3.0\Jaco_driver.AssemblyInfoInputs.cache
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netcoreapp3.0\Jaco_driver.AssemblyInfo.cs
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netcoreapp3.0\Jaco_driver.dll
+C:\Users\susanwei\Source\Repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netcoreapp3.0\Jaco_driver.pdb

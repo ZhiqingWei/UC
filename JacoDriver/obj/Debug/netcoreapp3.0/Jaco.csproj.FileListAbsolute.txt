@@ -1,0 +1,10 @@
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.exe
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.deps.json
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.runtimeconfig.json
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.runtimeconfig.dev.json
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.dll
+C:\Users\susanwei\source\repos\Jaco\Jaco\bin\Debug\netcoreapp3.0\Jaco.pdb
+C:\Users\susanwei\source\repos\Jaco\Jaco\obj\Debug\netcoreapp3.0\Jaco.AssemblyInfoInputs.cache
+C:\Users\susanwei\source\repos\Jaco\Jaco\obj\Debug\netcoreapp3.0\Jaco.AssemblyInfo.cs
+C:\Users\susanwei\source\repos\Jaco\Jaco\obj\Debug\netcoreapp3.0\Jaco.dll
+C:\Users\susanwei\source\repos\Jaco\Jaco\obj\Debug\netcoreapp3.0\Jaco.pdb

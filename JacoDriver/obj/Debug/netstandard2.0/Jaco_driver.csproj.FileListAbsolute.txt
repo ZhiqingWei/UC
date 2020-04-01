@@ -1,0 +1,7 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jaco_driver.deps.json
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jaco_driver.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jaco_driver.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\Jaco_driver.AssemblyInfoInputs.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\Jaco_driver.AssemblyInfo.cs
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\Jaco_driver.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\JacoDriver\obj\Debug\netstandard2.0\Jaco_driver.pdb

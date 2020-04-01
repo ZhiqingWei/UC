@@ -376,21 +376,21 @@ namespace AppServer
                         else
                         {
                             Task.Run(() =>
-                            {
+                            {   
                             bool lockTaken = false;     
                             try
-                            {
+                            {                       
                                 Monitor.TryEnter(device._lock, ref lockTaken);
                                 if (lockTaken)
                                 {
 
                                     string[] parameters = new string[fieldSize - 2];
                                     Array.Copy(parsedRequest, 2, parameters, 0, fieldSize - 2);
-                                        
+                                            
                                     if (deviceRequested == "Jaco")
                                         {
                                            
-                                           Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
+                                            Console.WriteLine(method.Invoke(device.DeviceObject, parameters));
                                         }
                                     else
                                         {

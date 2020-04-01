@@ -130,7 +130,9 @@ namespace Lynxmotion
                 {
                     current_ssc32.Disconnect();
                 }
+#pragma warning disable CS0168 // The variable 'exc' is declared but never used
                 catch (Exception exc)
+#pragma warning restore CS0168 // The variable 'exc' is declared but never used
                 {
 
                 }
@@ -140,7 +142,9 @@ namespace Lynxmotion
             {
                 current_ssc32.Dispose();
             }
+#pragma warning disable CS0168 // The variable 'exc' is declared but never used
             catch (Exception exc)
+#pragma warning restore CS0168 // The variable 'exc' is declared but never used
             {
 
             }
@@ -241,7 +245,9 @@ namespace Lynxmotion
                     ret = true;
                 }
             }
+#pragma warning disable CS0168 // The variable 'te' is declared but never used
             catch (TimeoutException te)
+#pragma warning restore CS0168 // The variable 'te' is declared but never used
             {
                 Disconnect();
                 throw new TimeoutException("Unable to find the SSC32 device, no response received...");

@@ -5,4 +5,3 @@ C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandar
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.AssemblyInfo.cs
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.pdb
-C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\UCProtocol\obj\Debug\netstandard2.0\UCProtocol.csprojAssemblyReference.cache

@@ -23,7 +23,9 @@ namespace UCUI.Models
         static private string[] keyBinds = new string[10];
         private string selectedDevice = "";
         string speed;
+#pragma warning disable CS0414 // The field 'UCSettings.check_click' is assigned but its value is never used
         Boolean check_click = false;
+#pragma warning restore CS0414 // The field 'UCSettings.check_click' is assigned but its value is never used
         
         // AutoResetEvent
         static public void SetKey(string keyIn, int i)

@@ -1,8 +1,8 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.csprojAssemblyReference.cache
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.dll.config
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\Lynxmotion.dll.config
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\Lynxmotion.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\plugin\Lynxmotion.pdb
-C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.csprojAssemblyReference.cache
-C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.dll.config
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.csproj.CopyComplete
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBDevices\Lynxmotion\obj\Debug\Lynxmotion.pdb
