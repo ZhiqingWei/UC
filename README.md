@@ -1,7 +1,28 @@
-# BuddyHub Core Controller & Desktop User Interface
+# Universal Controller
+
+## How to run the project
+
+*Run server
+    * Create a Mongo database from the existing data, modify __vid__ and __pid__ for device named "Jaco" under _outputData_ in _uc_ collections in the following format:
+        ```
+        "vid": "<your local USB device vid>"
+        "pid": "<your local USB device pid>"
+        ```
+    * Set the IP Whitelist to your network IP address or 0.0.0.0/0
+    * Copy the connection string to _connectionString.txt_ under ./bin/Server folder without any whitespace. 
+    * Compile the Server project and build it for debug
+    * Run server under administrator mode
+
+* Run desktop UI
+    * Run the server under administrator mode
+    * Run the desktop UI (UCUI.exe in .\bin folder)
+        * Or, alternatively compile the DesktopUI project and build it for debug
 
 ## File Structure
 This folder contains a single Visual Studio 2019 solution that comprises the a few subprojects in their respective folders. To explore and demonstrate the portability of the project in various platforms, projects are created with different versions of C# frameworks provided by Microsoft.
+
+* JacoDriver
+    * This project implements the driver to control the Jaco robotic arm. It implements six different functions for Arm and Wrist mode and four different functions for Finger mode including two addtional features to enter Drinking Mode and to return HOME position. This project is targeted at .Net Standard 2.0 and is cross-platform.
 
 * UCProtocol
     * This project implements internal protocols shared by the universal controller, desktop UI, and are intended for use by plug-in projects as well. It implements internal data representations, IDevice plug-in interface, server core, and internal server definitions. This project is targeted at .Net Standard 2.0 and is cross-platform.
@@ -18,33 +39,6 @@ This folder contains a single Visual Studio 2019 solution that comprises the a f
 * DesktopUI
     * This project implements the **WINDOWS-SPECIFIC** desktop user interface of the universal controller using Windows Presentation Foundation (WPF) framework. It is not directly linked to the server in anyway. It communicates with the server via internal http requests and uses message definitions implemented within UCProtocol. This project is targeted at .Net Framework 4.6.1, and it has to be re-written for different platforms. 
 
-In addition, an example implementation of hardware device control library is included in ./USBDevices/Lynxmotion. This project is adapted from [Lynxmotion SSC32/AL5x Robotic Arm Library](https://github.com/remyzerems/Lynxmotion) by implementing IDevice interface. 
+* USBDevices
+    * ./JacoInstance folder includes the implementation of the control library used by server to interact with the JacoDriver.
 
-## How to use the library
-* To add new USB device
-    * Link your project with UCProtocol and UCUtility projects under ./BuddyHub/
-    * In your main device object source file, link your project to System.ComponentModel ```using System.ComponentModel.Composition```
-    * Implement in your main object class using IDevice interface.
-    * Export your main object class using ```[Export(typeof(CSharpServer.IDevice))]```
-
-* To develop the universal controller
-    * No addition preparations required except for recover the required NuGet packages using Visual Studio.
-
-## How to test the library
-* To test the server
-    * Create a Mongo database, and put the details in *auth.json* under .bin/Server in the following format:
-    ```
-    {
-      "user": "<username of your database>",
-      "pass": "<password of your database>",
-      "dns": "<IP address of your databse>"
-    }
-    ```
-    * Change the database query code in .Server/Server.cs according to your database setting.
-    * Build debug configuration with Visual Studio and run it in debug mode
-    * You can also place a copy of it under .bin/ServerExe. If you publish the server project as a exe, that will be the default working directory. Note that exe file should be executed with administrative previledge.
-
-* To test the desktop UI
-    * Compile the DesktopUI project and build it for debug
-    * Run the server in any mode
-    * Run the desktop UI

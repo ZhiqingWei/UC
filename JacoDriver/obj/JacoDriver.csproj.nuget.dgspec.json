@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj": {}
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj": {
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj",
+        "projectUniqueName": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj",
         "projectName": "JacoDriver",
-        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj",
+        "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\JacoDriver\\JacoDriver.csproj",
         "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\JacoDriver\\obj\\",
+        "outputPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\JacoDriver\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",

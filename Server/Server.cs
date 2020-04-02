@@ -222,7 +222,7 @@ namespace AppServer
             MongoClient mongo;
             if (connectionStr)
             {
-                var connectionString = "mongodb+srv://ucl_uc:NQR7@cluster0-zragv.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true";
+                var connectionString = System.IO.File.ReadAllText("connectionString.txt");
                 mongo = new MongoClient(connectionString);
             }
             else

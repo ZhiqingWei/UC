@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {}
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\Server\\obj\\",
+        "outputPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
-                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
+              "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
               },
-              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
-                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj"
+              "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj"
               }
             }
           }
@@ -90,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "projectUniqueName": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
         "projectName": "UCProtocol",
-        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
         "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\obj\\",
+        "outputPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,17 +153,17 @@
         }
       }
     },
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
+        "projectUniqueName": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
         "projectName": "UCUtility",
-        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
+        "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCUtility\\UCUtility.csproj",
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
-                "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
+              "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+                "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj"
               }
             }
           }

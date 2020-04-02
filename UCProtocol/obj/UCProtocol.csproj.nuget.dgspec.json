@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {}
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {}
   },
   "projects": {
-    "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
+    "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "projectUniqueName": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
         "projectName": "UCProtocol",
-        "projectPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
+        "projectPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\UCProtocol.csproj",
         "packagesPath": "C:\\Users\\susanwei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\susanwei\\source\\repos\\BuddyHub\\BuddyHub\\UCProtocol\\obj\\",
+        "outputPath": "C:\\Users\\susanwei\\Source\\Repos\\BuddyHub\\BuddyHub\\UCProtocol\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\susanwei\\AppData\\Roaming\\NuGet\\NuGet.Config",

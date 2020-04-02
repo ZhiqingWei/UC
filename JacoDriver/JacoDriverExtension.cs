@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
-using static CSharpStruct.Wrapper;
+using static JacoDriver.Wrapper;
 
 namespace JacoDriver
 {

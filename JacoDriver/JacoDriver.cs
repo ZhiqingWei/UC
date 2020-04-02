@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Runtime.InteropServices;
-using static CSharpStruct.Wrapper;
+using static JacoDriver.Wrapper;
 
 namespace JacoDriver
 {
@@ -496,6 +496,12 @@ namespace JacoDriver
             return SendJoystickCommand(resetCommand);
         }
 
+        /// <summary>
+        /// Move Jaco arm forward in chosen speed
+        /// </summary>
+        /// <param name="mode">One of {"arm", "wrist", "finger"}</param>
+        /// <param name="speed">One of {"low", "medium", "high"}</param>
+        /// <returns>Status code</returns>
         public static int Forward(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
@@ -512,6 +518,12 @@ namespace JacoDriver
             }
         }
 
+        /// <summary>
+        /// Move Jaco arm backward in chosen speed
+        /// </summary>
+        /// <param name="mode"></param>
+        /// <param name="speed"></param>
+        /// <returns></returns>
         public static int Backward(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
