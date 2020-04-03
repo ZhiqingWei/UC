@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace JacoDriver
+namespace CSharpStruct
 {
 
     public class Wrapper

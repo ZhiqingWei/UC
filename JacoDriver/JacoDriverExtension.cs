@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
-using static JacoDriver.Wrapper;
+using static CSharpStruct.Wrapper;
 
 namespace JacoDriver
 {
     public partial class Driver
     {
-        
+
         /// <summary>
         /// This function initializes the API. It is the first function you call if you want the rest of the library.
         /// </summary>

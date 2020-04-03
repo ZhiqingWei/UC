@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UCProtocol\UCProtocol.csproj" />
     <ProjectReference Include="..\UCUtility\UCUtility.csproj" />
+    <ProjectReference Include="..\JacoDriver\JacoDriver.csproj" />
   </ItemGroup>
 
 </Project>

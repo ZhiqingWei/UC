@@ -1,3 +1,14 @@
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\CommandLayer.h
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\CommunicationLayer.h
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\KinovaTypes.h
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x64\CommandLayerEthernet.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x64\CommandLayerWindows.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x64\CommunicationLayerEthernet.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x64\CommunicationLayerWindows.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x86\CommandLayerEthernet.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x86\CommandLayerWindows.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x86\CommunicationLayerEthernet.dll
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Jacolib\x86\CommunicationLayerWindows.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Server.deps.json
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Server.runtimeconfig.json
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\Server.runtimeconfig.dev.json

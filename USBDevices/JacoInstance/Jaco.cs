@@ -18,6 +18,7 @@ namespace Lynxmotion
     public class Jaco : IDevice
     {
         private bool _isDrinking = false;
+        private Driver driver;
 
         public Jaco() { }
 
@@ -40,8 +41,9 @@ namespace Lynxmotion
 
         public void Initialise()
         {
-            ////Initialse the driver to control Jaco
-            //Driver.InitialseControl();
+            //Initialse the driver to control Jaco
+            driver = new Driver();
+            driver.InitialseControl();
         }
 
         /// <summary>
@@ -53,14 +55,14 @@ namespace Lynxmotion
         public string Forward(string Mode, string Speed)    
         {
             
-            //int result = Driver.Forward(Mode, Speed);
+            int result = driver.Forward(Mode, Speed);
 
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving FORWARD at " + Speed + " speed !! (Arm mode)";
+                    return "Jaco moving FORWARD at " + Speed + " speed !! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco moving FORWARD at " + Speed + " speed !! (Wrist mode)";
+                    return "Jaco moving FORWARD at " + Speed + " speed !! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco moving FORWARD at " + Speed + " speed !!";
             }
@@ -75,16 +77,16 @@ namespace Lynxmotion
         /// <returns></returns>
         public string Backward(string Mode, string Speed)
         {
-            
-            //int result = Driver.Backward(Mode, Speed);
+
+            int result = driver.Backward(Mode, Speed);
 
             switch (Mode)
             {
                 case "arm":
                     
-                    return "Jaco moving BACKWARD at " + Speed + " speed !! (Arm mode)";
+                    return "Jaco moving BACKWARD at " + Speed + " speed !! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco moving BACKWARD at " + Speed + " speed !! (Wrist mode)";
+                    return "Jaco moving BACKWARD at " + Speed + " speed !! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco moving BACKWARD at " + Speed + " speed !!";
             }
@@ -98,16 +100,16 @@ namespace Lynxmotion
         /// <returns></returns>
         public string TiltUp(string Mode, string Speed)
         {
-            //int result = Driver.TiltUp(Mode, Speed);
+            int result = driver.TiltUp(Mode, Speed);
 
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving UP at " + Speed + " speed!! (Arm mode)";
+                    return "Jaco moving UP at " + Speed + " speed!! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco moving UP at " + Speed + " speed!! (Wrist mode)";
+                    return "Jaco moving UP at " + Speed + " speed!! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 case "finger":
-                    return "Jaco opening three fingers !! (Finger mode)";
+                    return "Jaco opening three fingers !! (Finger mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco moving UP at " + Speed + " speed !! ";
             }
@@ -121,16 +123,16 @@ namespace Lynxmotion
         /// <returns></returns>
         public string TiltDown(string Mode, string Speed)
         {
-            //int result = Driver.TiltDown(Mode, Speed);
-            
+            int result = driver.TiltDown(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco moving DOWN at " + Speed + " speed !! (Arm mode)";
+                    return "Jaco moving DOWN at " + Speed + " speed !! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco moving DOWN at " + Speed + " speed !! (Wrist mode)";
+                    return "Jaco moving DOWN at " + Speed + " speed !! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 case "finger":
-                    return "Jaco closing three fingers !! (Finger mode)";
+                    return "Jaco closing three fingers !! (Finger mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco moving DOWN at  " + Speed + " speed!! ";
             }
@@ -144,16 +146,16 @@ namespace Lynxmotion
         /// <returns></returns>
         public string TurnLeft(string Mode, string Speed)
         {
-            //int result = Driver.TurnLeft(Mode, Speed);
-            
+            int result = driver.TurnLeft(Mode, Speed);
+
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning LEFT at " + Speed + " speed !! (Arm mode)";
+                    return "Jaco turning LEFT at " + Speed + " speed !! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco turning LEFT at " + Speed + " speed !! (Wrist mode)";
+                    return "Jaco turning LEFT at " + Speed + " speed !! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 case "finger":
-                    return "Jaco opening two fingers !! (Finger mode)";
+                    return "Jaco opening two fingers !! (Finger mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco turning LEFT at " + Speed + " speed !!";
             }
@@ -167,16 +169,16 @@ namespace Lynxmotion
         /// <returns></returns>
         public string TurnRight(string Mode, string Speed)
         {
-            //int result = Driver.TurnRight(Mode, Speed);
+            int result = driver.TurnRight(Mode, Speed);
 
             switch (Mode)
             {
                 case "arm":
-                    return "Jaco turning RIGHT at " + Speed + " speed !! (Arm mode)";
+                    return "Jaco turning RIGHT at " + Speed + " speed !! (Arm mode)" + Environment.NewLine + "Status code: " + result;
                 case "wrist":
-                    return "Jaco turning RIGHT at " + Speed + " speed !! (Wrist mode)";
+                    return "Jaco turning RIGHT at " + Speed + " speed !! (Wrist mode)" + Environment.NewLine + "Status code: " + result;
                 case "finger":
-                    return "Jaco closing two fingers !! (Finger mode)";
+                    return "Jaco closing two fingers !! (Finger mode)" + Environment.NewLine + "Status code: " + result;
                 default:
                     return "Jaco turning RIGHT at " + Speed + " speed !!";
             }
@@ -187,17 +189,17 @@ namespace Lynxmotion
         /// </summary>
         public string DrinkingMode(string Mode, string Pre)
         {
-            //int result = Driver.ToggleDrinkingMode();
+            int result = driver.ToggleDrinkingMode();
 
             if (_isDrinking)
             {
                 _isDrinking = false;
-                return "Exit drinking mode";
+                return "Exit drinking mode" + Environment.NewLine + "Status code: " + result;
             }
             else
             {
                 _isDrinking = true;
-                return "In drinking mode";
+                return "In drinking mode" + Environment.NewLine + "Status code: " + result;
             }
         }
 
@@ -206,8 +208,8 @@ namespace Lynxmotion
         /// </summary>
         public string Reset(string Mode, string Pre)
         {
-            //int result = Driver.ResetHOME();
-            return "Jaco returning to HOME position.";
+            int result = driver.ResetHOME();
+            return "Jaco returning to HOME position." + Environment.NewLine + "Status code: " + result;
         }
     }
 }

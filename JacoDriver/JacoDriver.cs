@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Reflection;
+using System.IO;
 using System.Runtime.InteropServices;
-using static JacoDriver.Wrapper;
+using static CSharpStruct.Wrapper;
 
 namespace JacoDriver
 {
     public partial class Driver
     {
+
+        public Driver()
+        {
+            string version = (IntPtr.Size == 8 ? "x64" : "x86");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Jacolib", version);
+            Directory.SetCurrentDirectory(path);
+        }
+
         #region *** C O D I N G ***
 
         /// <summary>
         /// Set the new controlMapping
         /// </summary>
-        public static int SetControlMapping()
+        public int SetControlMapping()
         {
             ControlMappingCharts controlMappingCharts = new ControlMappingCharts();
             GetControlMapping(ref controlMappingCharts);
@@ -90,7 +100,7 @@ namespace JacoDriver
             return SetControlMapping(controlMappingCharts);
         }
 
-        public static IntPtr ControlMappingCharts_helper()
+        public IntPtr ControlMappingCharts_helper()
         {
             StickEvents[] stickEvents = new StickEvents[STICK_EVENT_COUNT];
             ButtonEvents[] buttonEvents = new ButtonEvents[BUTTON_EVENT_COUNT];
@@ -108,7 +118,7 @@ namespace JacoDriver
 
         #region ARM_MODE
 
-        private static int Arm_Forward(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Forward(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -140,7 +150,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Arm_Backward(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Backward(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -172,7 +182,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Arm_Left(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Left(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -204,7 +214,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Arm_Right(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Right(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -236,7 +246,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Arm_Up(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Up(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -268,7 +278,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Arm_Down(TrajectoryPoint pointToSend, string speed)
+        private int Arm_Down(TrajectoryPoint pointToSend, string speed)
         {
             CartesianPosition currentCommand = new CartesianPosition { };
             if (GetCartesianCommand(ref currentCommand) == NO_ERROR_KINOVA)
@@ -303,7 +313,7 @@ namespace JacoDriver
 
         #region WRIST_MODE
 
-        private static int Wrist_Z(TrajectoryPoint pointToSend, string speed, bool isPositive)
+        private int Wrist_Z(TrajectoryPoint pointToSend, string speed, bool isPositive)
         {
             //We specify that this point will be used an angular(joint by joint) velocity vector.
             pointToSend.Position.Type = POSITION_TYPE.CARTESIAN_VELOCITY;
@@ -326,7 +336,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Wrist_Y(TrajectoryPoint pointToSend, string speed, bool isPositive)
+        private int Wrist_Y(TrajectoryPoint pointToSend, string speed, bool isPositive)
         {
             //We specify that this point will be used an angular(joint by joint) velocity vector.
             pointToSend.Position.Type = POSITION_TYPE.CARTESIAN_VELOCITY;
@@ -349,7 +359,7 @@ namespace JacoDriver
             }
         }
 
-        private static int Wrist_X(TrajectoryPoint pointToSend, string speed, bool isPositive)
+        private int Wrist_X(TrajectoryPoint pointToSend, string speed, bool isPositive)
         {
             //We specify that this point will be used an angular(joint by joint) velocity vector.
             pointToSend.Position.Type = POSITION_TYPE.CARTESIAN_VELOCITY;
@@ -375,7 +385,7 @@ namespace JacoDriver
         #endregion
 
         #region FINGER_MODE
-        private static int Two_Fingers(bool ifOpen)
+        private int Two_Fingers(bool ifOpen)
         {
             JoystickCommand fingerCommand = new JoystickCommand { };
             fingerCommand.InitStruct();
@@ -392,7 +402,7 @@ namespace JacoDriver
             return SendJoystickCommand(fingerCommand);
         }
 
-        private static int Three_Fingers(bool ifOpen)
+        private int Three_Fingers(bool ifOpen)
         {
             JoystickCommand fingerCommand = new JoystickCommand { };
             fingerCommand.InitStruct();
@@ -411,7 +421,7 @@ namespace JacoDriver
         #endregion
 
         #region *** Main_Functions ***
-        static KinovaDevice[] devices = new KinovaDevice[MAX_KINOVA_DEVICE];
+        KinovaDevice[] devices = new KinovaDevice[MAX_KINOVA_DEVICE];
 
         /// <summary>
         /// Initialse API to control,
@@ -420,7 +430,7 @@ namespace JacoDriver
         /// start the control using API
         /// </summary>
         /// <returns></returns>
-        public static int InitialseControl()
+        public int InitialseControl()
         {
             //Initialise the API to control Jaco robotic arm
             int result = InitAPI();
@@ -436,6 +446,9 @@ namespace JacoDriver
                 Console.WriteLine("result of GetDevices = {0}, {1}", result, devicecount);
                 try
                 {
+                    /*
+                     * problem with protected memory
+                     */
                     KinovaDevice jacodevice = Marshal.PtrToStructure<KinovaDevice>(mem);
 
                     if (result == NO_ERROR_KINOVA)
@@ -449,9 +462,7 @@ namespace JacoDriver
 
                     return result;
                 }
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
                 catch (Exception e) { }
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
                 finally
                 {
                     Marshal.FreeHGlobal(mem);
@@ -465,7 +476,7 @@ namespace JacoDriver
         /// Close API
         /// </summary>
         /// <returns></returns>
-        public static int CloseControl()
+        public int CloseControl()
         {
             return CloseAPI();
         }
@@ -473,7 +484,7 @@ namespace JacoDriver
         /// <summary>
         /// Try to active and deactive drinking mode, MUST be called after <see cref="InitialseControl"/>
         /// </summary>
-        public static int ToggleDrinkingMode()
+        public int ToggleDrinkingMode()
         {
             JoystickCommand drinkingCommand = new JoystickCommand { };
             drinkingCommand.InitStruct();
@@ -486,7 +497,7 @@ namespace JacoDriver
         /// <summary>
         /// Try to reset to HOME position, MUST be called after <see cref="InitialseControl"/>
         /// </summary>
-        public static int ResetHOME()
+        public int ResetHOME()
         {
             JoystickCommand resetCommand = new JoystickCommand { };
             resetCommand.InitStruct();
@@ -496,13 +507,7 @@ namespace JacoDriver
             return SendJoystickCommand(resetCommand);
         }
 
-        /// <summary>
-        /// Move Jaco arm forward in chosen speed
-        /// </summary>
-        /// <param name="mode">One of {"arm", "wrist", "finger"}</param>
-        /// <param name="speed">One of {"low", "medium", "high"}</param>
-        /// <returns>Status code</returns>
-        public static int Forward(string mode, string speed)
+        public int Forward(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -518,13 +523,7 @@ namespace JacoDriver
             }
         }
 
-        /// <summary>
-        /// Move Jaco arm backward in chosen speed
-        /// </summary>
-        /// <param name="mode"></param>
-        /// <param name="speed"></param>
-        /// <returns></returns>
-        public static int Backward(string mode, string speed)
+        public int Backward(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -540,7 +539,7 @@ namespace JacoDriver
             }
         }
 
-        public static int TiltUp(string mode, string speed)
+        public int TiltUp(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -558,7 +557,7 @@ namespace JacoDriver
             }
         }
 
-        public static int TiltDown(string mode, string speed)
+        public int TiltDown(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -576,7 +575,7 @@ namespace JacoDriver
             }
         }
 
-        public static int TurnLeft(string mode, string speed)
+        public int TurnLeft(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -594,7 +593,7 @@ namespace JacoDriver
             }
         }
 
-        public static int TurnRight(string mode, string speed)
+        public int TurnRight(string mode, string speed)
         {
             TrajectoryPoint pointToSend = new TrajectoryPoint();
             pointToSend.InitStruct();
@@ -614,5 +613,27 @@ namespace JacoDriver
         #endregion
 
         #endregion
+
+        //public static void Main(string[] args)
+        //{
+        //    //KinovaDevice device = new KinovaDevice
+        //    //{
+        //    //    SerialNumber = "PJ00900006509321-0",
+        //    //    Model = "Jaco",
+        //    //    VersionMajor = 111,
+        //    //    VersionMinor = 222,
+        //    //    VersionRelease = 333,
+        //    //    DeviceType = 444,
+        //    //    DeviceID = 555
+        //    //};
+        //    int result;
+        //    Driver driver = new Driver();
+        //    result = driver.InitialseControl();
+        //    Console.WriteLine("Result of InitialiseControl() = {0}", result);
+
+        //    result = CloseAPI();
+        //    Console.WriteLine("Result of CloseAPI() = {0}", result);
+        //}
+
     }
 }

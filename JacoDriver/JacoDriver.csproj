@@ -8,4 +8,8 @@
     <OutDir>..\bin\Server\plugin\</OutDir>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="$(ProjectDir)Jacolib\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Server/1.0.0": {
         "dependencies": {
+          "JacoDriver": "1.0.0",
           "MongoDB.Driver": "2.7.0",
           "Newtonsoft.Json": "11.0.2",
           "System.IO.Ports": "4.5.0",
@@ -781,6 +782,11 @@
           "System.Runtime.Handles": "4.3.0"
         }
       },
+      "JacoDriver/1.0.0": {
+        "runtime": {
+          "JacoDriver.dll": {}
+        }
+      },
       "UCProtocol/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.7.0",
@@ -1346,6 +1352,11 @@
       "sha512": "sha512-k/+g4b7vjdd4aix83sTgC9VG6oXYKAktSfNIJUNGxPEj7ryEOfzHHhfnmsZvjxawwcD9HyWXKCXmPjX8U4zeSw==",
       "path": "system.threading.threadpool/4.3.0",
       "hashPath": "system.threading.threadpool.4.3.0.nupkg.sha512"
+    },
+    "JacoDriver/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "UCProtocol/1.0.0": {
       "type": "project",

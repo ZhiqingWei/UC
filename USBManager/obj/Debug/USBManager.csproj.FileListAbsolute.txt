@@ -1,7 +1,7 @@
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\USBManager.dll.config
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\USBManager.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\bin\Server\USBManager.pdb
+C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBManager\obj\Debug\USBManager.csprojAssemblyReference.cache
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBManager\obj\Debug\USBManager.csproj.CopyComplete
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBManager\obj\Debug\USBManager.dll
 C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBManager\obj\Debug\USBManager.pdb
-C:\Users\susanwei\source\repos\BuddyHub\BuddyHub\USBManager\obj\Debug\USBManager.csprojAssemblyReference.cache
